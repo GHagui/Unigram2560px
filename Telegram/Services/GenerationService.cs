@@ -231,12 +231,7 @@ namespace Telegram.Services
                 var file = await StorageApplicationPermissions.FutureAccessList.GetFileAsync(args[0]);
                 var temp = await StorageFile.GetFileFromPathAsync(update.DestinationPath);
 
-                var maxSize = 1280;
-
-                if (SettingsService.Current.Diagnostics.SendLargePhotos)
-                {
-                    maxSize = 2560;
-                }
+                var maxSize = 2560;
 
                 if (args.Length > 3)
                 {
